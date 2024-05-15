@@ -1,5 +1,5 @@
+# Updated Final Project for Tupled Out!
 import random
-
 class Player:
     def __init__(self, name):
         self.name = name 
@@ -43,7 +43,17 @@ class DiceRound:
 
         turn_score = sum([rolls[i] for i in range(3) if i not in fixed])
         print(f"{player.name} scored {turn_score} points this round!")
-        return turn_score
+   
+    # Check if any player needs to give a point to the player with the lowest score 
+        lowest_score = min([p.score for p in self.players])
+        if player.score == lowest_score:
+            for p in self.players:
+                if p != player:
+                    print(f"{p.name} gives 1 point to {player.name}!")
+                    p.score -= 1
+                    player.score += 1
+   
+    # return turn_score
     
     def display_scores(self):
         print("\nCurrent Scores Available:")
