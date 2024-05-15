@@ -1,5 +1,4 @@
-# word guessing game consolidation project
-
+# updated word guessing game final project
 import random
 personal = "self attempts"
 person = "self"
@@ -54,16 +53,23 @@ def determine_status_in_game(person):
 
 def main():
     personal_word_bank = ["earth", "mars", "jupiter", "saturn", "uranus"]
-    print("QuestionAnswer") (person.peronal_word_bank)
-
-amount_of_players = int(input("insert amount of players: "))
-for   _   in range (amount_of_players):
-    player_tag = input ("enter player tag: ")
-    add_another_player(player_tag)
-    add_another_player(player_tag)
-
-
+    hidden_word = random.choice (self.personal_word_bank)
+    assumed_letters = set()
     game_over = False
+    print("Welcome to the game!")
+    players = []
+
+    amount_of_players = int(input("insert amount of players: "))
+
+    for   _   in range (amount_of_players):
+        player_tag = input ("enter player tag: ")
+        players.append(player_tag)
+        add_another_player(person, player_tag)
+        add_another_player(person, player_tag)
+
+    for player in players:
+        print(f"\n{player}, it's your turn to play!")
+        play_game(player)
 
 def play_game(person_playing):
     if not game_over:
@@ -82,8 +88,28 @@ def play_game(person_playing):
             print(f"Your score (complete letter guesses): {players[person_playing]['score']}")
             game_over = True
 
-    else:
-            
+        else:
+            print ("Sorry wrong guess ):")
+            # if the term is wrong, add another word to the guess to add to original amount of words in bank
+            hidden_word = random.choice (personal_word_bank)
+            guesses_remaining += 1
+            print("Lets try a different word")
+
+    while not game_over:
+        for player in self.players: 
+            print ( f"\n Current player: {player.name}")
+            print ("Guessed letters:" , ' ' )
+            print (f" Remaining word guesses: {player.remaining_word_guesses}")
+
+            letter = input ("guess a letter: ")
+            guess_the_letter(letter)
+
+            if input ("Can you guess the word? (yes or no)").lower() == 'yes':
+                word = input ("Enter your word guess: ").lower()
+                guess_the_letter (word, player)
+                if game_over:
+                    break
+                
         if players[person_playing]['amount_of_guesses_left'] == 0:
             print(f"status '{status['current_player']} has no more word guesses left and is removed from the game.")
                     
@@ -92,6 +118,3 @@ def play_game(person_playing):
 
         if __name__ == "__main__":
             main ()
-git remote add origin https://github.com/prinnn4/TipledOut-Game.git
-git branch -M main
-git push -u origin main
