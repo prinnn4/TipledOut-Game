@@ -117,4 +117,5 @@ def play_game(person_playing):
             another_player()
 
         if __name__ == "__main__":
-            main ()
+            game = Diceround(["Player 1", "Player 2" ])
+            game.play_game()
